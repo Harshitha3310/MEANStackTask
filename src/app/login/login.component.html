@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<div class="container">
+  
+ 
+    <div class="col-md-6" style="margin-left: 25%;">
+        <div class="jumbotron">
+            <form class="form form-horizontal " id="loginForm" [formGroup]="loginForm" novalidate (ngSubmit)="logininfo()">
+                <div class="form-body">
+                  <div class="row  mt-2">
+                    <div class="col-md-12">
+                      <label for="Email">
+                        <strong>Email </strong>
+                      </label>
+                      <input type="text" class="form-control" placeholder="Enter your email" name="email" formControlName="email">
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-md-12">
+                      <label for="Password">
+                        <strong>Password</strong>
+                        <span class="hint-message"> &nbsp;(Minimum 8 characters are required)</span>
+                      </label>
+          
+                      <!-- <div style="margin-left: 92%;font-size: smaller;">({{titlelength}} / 200)</div> -->
+                      <input type="password" class="form-control" placeholder="Enter your Password" name="pwd" formControlName="pwd"
+                        minlength="8">
+                    </div>
+                  </div>
+          
+                  <button type="submit" class="btn btn-primary" name="button"
+                    style="display:inline-block; margin:15px;" [disabled]="!loginForm.valid">Login</button>
+                  <button type="button" class="btn btn-primary" name="button" style="display:inline-block;"
+                    (click)="register()">Register</button>
+                  <!-- <a href ="/home/register">Registartion</a> -->
+                </div>
+              </form>
+        </div>
+    </div>
+ 
+
+</div>
